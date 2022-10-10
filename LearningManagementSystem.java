@@ -5,6 +5,8 @@
 
 package learningmanagementsystem;
 
+import Authentification.LoginController;
+
 /**
  *
  * @author hkgob
@@ -23,6 +25,8 @@ public class LearningManagementSystem {
             //from there they can submit
         //if the user clicks communication we show checkInbox
             //if they select edit, open a send email box
-        System.out.println("Hello World!");
+        System.out.println("Here is everything you need");
+        LoginController lc = new LoginController();
+
     }
 }
