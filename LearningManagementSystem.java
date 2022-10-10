@@ -5,7 +5,7 @@
 
 package learningmanagementsystem;
 
-import Authentification.LoginController;
+import learningmanagementsystem.Authentification.LoginController;
 
 /**
  *
