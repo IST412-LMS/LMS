@@ -27,6 +27,5 @@ public class LearningManagementSystem {
             //if they select edit, open a send email box
         System.out.println("Here is everything you need");
         LoginController lc = new LoginController();
-
     }
 }

@@ -1,6 +1,9 @@
 package learningmanagementsystem.Authentification;
 
 import learningmanagementsystem.Authentification.Person;
+import learningmanagementsystem.AssignmentSubmission.AssignmentList;
+import learningmanagementsystem.Communication.CheckInbox;
+
 import java.util.Scanner;
 
 public class StudentInterface {
@@ -17,10 +20,12 @@ public class StudentInterface {
             case 1:
                 //TODO go to submissions list
                 System.out.println("Here is the assignment list");
+                AssignmentList al = new AssignmentList();
                 break;
             case 2:
                 //TODO go to communication
                 System.out.println("Here is communication");
+                CheckInbox ci = new CheckInbox();
                 break;
             case 3:
                 return;
