@@ -5,8 +5,9 @@
 package learningmanagementsystem.Communication;
 
 /**
- *
- * @author hkgob
+ * 1. find recipient (s) by search
+ * 2. compose/edit email
+ * 3. send new email
  */
 public class SendEmail {
     // find recipient(s) by search

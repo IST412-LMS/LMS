@@ -4,12 +4,12 @@
  */
 package learningmanagementsystem.AssignmentEvaluation;
 
-/**
- *
- * @author hkgob
- */
+/** 
+* 
+* 1. download submission
+* 2. add grade
+* 3. add comment
+*/
 public class GradeAssignment {
-    // download submission
-    // add grade
-    // add comment
+
 }

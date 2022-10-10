@@ -5,8 +5,9 @@
 package learningmanagementsystem.Communication;
 
 /**
- *
- * @author hkgob
+ * 1. list view of all recieved emails
+ * 2. boolean stores ifOpened
+ * 3. bold unopened
  */
 public class CheckInbox {
     //list view of all recieved emails

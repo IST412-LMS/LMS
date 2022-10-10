@@ -5,8 +5,10 @@
 package learningmanagementsystem.AssignmentSubmission;
 
 /**
- *
- * @author hkgob
+ * 1. quiz/assignment submission boolean
+ * 2. file type
+ * 3. comment box
+ * 4. file upload
  */
 public class SubmitAssignment {
     // quiz submission

@@ -5,8 +5,8 @@
 package learningmanagementsystem.AssignmentEvaluation;
 
 /**
- *
- * @author hkgob
+ * 1. post grade 
+ * 2. post comments
  */
 public class UploadGrade {
     // post grade and comments

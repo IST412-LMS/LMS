@@ -5,9 +5,9 @@
 package learningmanagementsystem.AssignmentSubmission;
 
 /**
- *
- * @author hkgob
- */
+ * 1. shows assignments
+* 2. allows toggle between calendar and list view
+*/
 public class AssignmentList {
     // toggle between calender and list view
 }
