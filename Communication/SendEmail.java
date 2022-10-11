@@ -12,5 +12,8 @@ package learningmanagementsystem.Communication;
 public class SendEmail {
     // find recipient(s) by search
     // compose/edit email
-    //send new email
+    // send new email
+    public SendEmail() {
+        System.out.println("You have made it to the sendEmail page");
+    }
 }

@@ -5,9 +5,12 @@
 package learningmanagementsystem.AssignmentEvaluation;
 
 /**
- * 1. post grade 
+ * 1. post grade
  * 2. post comments
  */
 public class UploadGrade {
-    // post grade and comments
+    public UploadGrade() {
+        // post grade and comments
+        System.out.println("Your grade has been uploaded");
+    }
 }

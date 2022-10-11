@@ -4,25 +4,43 @@
  */
 package learningmanagementsystem.AssignmentSubmission;
 
+import java.util.Scanner;
+
 /**
  * 1. shows assignments
-* 2. allows toggle between calendar and list view
-*/
+ * 2. allows toggle between calendar and list view
+ */
 public class AssignmentList {
-    public AssignmentList(){
+    public AssignmentList() {
         boolean listView = true;
-    
-        //open GUI 
-        System.out.println("Here is the assignment list");
 
-        //onChange of toggle, toggle between calender and list view
-        if(listView == true){
-            //change view 
-            //update boolean
-            listView = false;
+        // allow assignment to be seen
+        System.out.println("Select Option:");
+        System.out.println("1. Select Assignment");
+        System.out.println("2. Change view");
+        System.out.println("3. Exit Application");
+
+        Scanner mScan = new Scanner(System.in);
+        int choice = mScan.nextInt();
+
+        switch (choice) {
+            case 1:
+                // TODO go to view page
+                System.out.println("Here is the veiw page");
+                // onCLick of specific assignemnt
+                ViewAssignment va = new ViewAssignment();
+                break;
+            case 2:
+                System.out.println("Changing view");
+                if (listView == true) {
+                    // change view
+                    // update boolean
+                    listView = false;
+                }
+            case 3:
+                return;
+            default:
+                break;
         }
-        
-        //onCLick of specific assignemnt
-        ViewAssignment va = new ViewAssignment();
-    }    
+    }
 }

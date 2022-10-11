@@ -11,8 +11,9 @@ package learningmanagementsystem.AssignmentSubmission;
  * 4. file upload
  */
 public class SubmitAssignment {
-    
-    public SubmitAssignment(){
+
+    public SubmitAssignment() {
+        System.out.println("You have made it to the submission page");
         // quiz submission
         // assignment submission
         // file type
