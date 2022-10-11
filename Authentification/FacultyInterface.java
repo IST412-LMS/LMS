@@ -2,6 +2,7 @@ package learningmanagementsystem.Authentification;
 import java.util.Scanner;
 import learningmanagementsystem.Communication.CheckInbox;
 import learningmanagementsystem.AssignmentEvaluation.GradeAssignment;
+import learningmanagementsystem.AssignmentEvaluation.UploadGrade;
 
 public class FacultyInterface {
     public FacultyInterface(){
@@ -13,11 +14,19 @@ public class FacultyInterface {
         
         Scanner mScan = new Scanner(System.in);
         int choice = mScan.nextInt();
+        boolean isGraded = false;
         switch (choice) {
             case 1:
                 //TODO go to gradebook
                 System.out.println("Here is the grading");
-                GradeAssignment ga = new GradeAssignment();
+                //check if assignment has been graded
+                if(isGraded == true){
+                    //immediately go to upload grade
+                    UploadGrade ug = new UploadGrade();
+                } else {
+                    //open GradeAssignment
+                    GradeAssignment ga = new GradeAssignment();
+                }
                 break;
             case 2:
                 //TODO go to communication

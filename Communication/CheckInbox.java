@@ -11,4 +11,7 @@ package learningmanagementsystem.Communication;
  */
 public class CheckInbox {
     //list view of all recieved emails
+            
+        //onCLick of send email
+        SendEmail se = new SendEmail();
 }

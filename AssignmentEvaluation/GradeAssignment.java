@@ -11,5 +11,10 @@ package learningmanagementsystem.AssignmentEvaluation;
 * 3. add comment
 */
 public class GradeAssignment {
-
+    public GradeAssignment(){
+        //allow assignment to be graded
+        
+        //onCLick of upload grade
+        UploadGrade ug = new UploadGrade();
+    }
 }
