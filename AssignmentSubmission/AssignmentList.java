@@ -9,5 +9,20 @@ package learningmanagementsystem.AssignmentSubmission;
 * 2. allows toggle between calendar and list view
 */
 public class AssignmentList {
-    // toggle between calender and list view
+    public AssignmentList(){
+        boolean listView = true;
+    
+        //open GUI 
+        System.out.println("Here is the assignment list");
+
+        //onChange of toggle, toggle between calender and list view
+        if(listView == true){
+            //change view 
+            //update boolean
+            listView = false;
+        }
+        
+        //onCLick of specific assignemnt
+        ViewAssignment va = new ViewAssignment();
+    }    
 }

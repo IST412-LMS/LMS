@@ -11,9 +11,12 @@ package learningmanagementsystem.AssignmentSubmission;
  * 4. file upload
  */
 public class SubmitAssignment {
-    // quiz submission
-    // assignment submission
-    // file type
-    // add comments
-    // file upload
+    
+    public SubmitAssignment(){
+        // quiz submission
+        // assignment submission
+        // file type
+        // add comments
+        // file upload
+    }
 }

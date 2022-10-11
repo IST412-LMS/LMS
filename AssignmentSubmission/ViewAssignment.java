@@ -8,5 +8,9 @@ package learningmanagementsystem.AssignmentSubmission;
  * 1. view rubric
  */
 public class ViewAssignment {
-    //view rubric
+    public ViewAssignment(){
+        //shows rubric  
+        //onClick of submission button open submission box
+        SubmitAssignment sa = new SubmitAssignment();
+    }
 }
