@@ -1,4 +1,4 @@
-# Learning Managedment System
+# Learning Management System
 
 ## Authentification
 The system starts with authentification. If a user is authenticated as a faculty they can see the assignment evaluation and communication methods. If a user is authenticated as a student they can see the assignment submision and communication methods. 
