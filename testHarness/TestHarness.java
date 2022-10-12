@@ -14,51 +14,32 @@ import learningmanagementsystem.Authentification.LoginController;
  */
 public class TestHarness {
     public static void main(String[] args) {
-        Console console = System.console();
-        if (console == null) {
-            System.err.println("No console.");
-            System.exit(1);
-        }
-        // while (true) {
-
-        // Pattern pattern =
-        // Pattern.compile(console.readLine("%nEnter your regex: "));
-
-        // Matcher matcher =
-        // pattern.matcher(console.readLine("Enter input string to search: "));
-
-        // boolean found = false;
-        // while (matcher.find()) {
-        // console.format("I found the text" +
-        // " \"%s\" starting at " +
-        // "index %d and ending at index %d.%n",
-        // matcher.group(),
-        // matcher.start(),
-        // matcher.end());
-        // found = true;
-        // }
-        // if(!found){
-        // console.format("No match found.%n");
-        // }
-        // }
-
         // calls the login controller
         LoginController lc = new LoginController();
 
-        // faculty uploading grade
-        // 1. FACULTY, facIST123, 1, 4
+        // Below are the five tasks we plan to test
+        // Each of the tasks list the input in order to reach the end and correctly test
+        // They also tell you what the output should be
 
-        // faculty send email
-        // 2. FACULTY, facIST123, 2, 1
+        // 1. faculty uploading grade
+        // FACULTY, facIST123, 1, 4
+        // "Your grade has been uploaded"
 
-        // faculty quit
-        // 3. FACULTY, facIST123, 3
+        // 2. faculty send email
+        // FACULTY, facIST123, 2, 1
+        // "You have made it to the sendEmail page"
 
-        // student submitting
-        // 4. STUDENT, stud123, 1, 1
+        // 3. faculty quit
+        // FACULTY, facIST123, 3
+        // program will quit
 
-        // student changing assignment list view
-        // 5. STUDENT, stud123, 1, 2
+        // 4. student submitting
+        // STUDENT, studIST123, 1, 1, 1
+        // "You have made it to the submission page"
+
+        // 5. student changing assignment list view
+        // STUDENT, studIST123, 1, 2
+        // "Changing view"
 
     }
 }

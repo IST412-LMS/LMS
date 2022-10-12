@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package learningmanagementsystem.AssignmentSubmission;
+package learningmanagementsystem.Assignments;
 
 import java.util.Scanner;
 
@@ -28,7 +28,8 @@ public class AssignmentList {
                 // TODO go to view page
                 System.out.println("Here is the veiw page");
                 // onCLick of specific assignemnt
-                ViewAssignment va = new ViewAssignment();
+                Assignment assigView = new Assignment();
+                assigView.ViewAssignment();
                 break;
             case 2:
                 System.out.println("Changing view");
