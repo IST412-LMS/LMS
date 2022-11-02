@@ -42,8 +42,7 @@ public class Inbox {
 
     public void ReadRecievedEmail() {
         try {
-            FileReader fileReader = new FileReader(
-                    "C:/Users/hkgob/IST 412/NetbeansProject/LearningManagementSystem/src/main/java/learningmanagementsystem/Communication/recievedEmails.txt");
+            FileReader fileReader = new FileReader("recievedEmails.txt");
             BufferedReader reader = new BufferedReader(fileReader);
             String line;
 
@@ -58,8 +57,7 @@ public class Inbox {
 
     public void ReadSentEmail() {
         try {
-            FileReader fileReader = new FileReader(
-                    "C:/Users/hkgob/IST 412/NetbeansProject/LearningManagementSystem/src/main/java/learningmanagementsystem/Communication/sentEmails.txt");
+            FileReader fileReader = new FileReader("sentEmails.txt");
             BufferedReader reader = new BufferedReader(fileReader);
             String line;
 
@@ -77,9 +75,7 @@ public class Inbox {
     // send new email
     public void SendEmail() {
         try {
-            FileWriter myWriter = new FileWriter(
-                    "C:/Users/hkgob/IST 412/NetbeansProject/LearningManagementSystem/src/main/java/learningmanagementsystem/Communication/sentEmails.txt",
-                    true);
+            FileWriter myWriter = new FileWriter("sentEmails.txt");
             BufferedWriter bw = new BufferedWriter(myWriter);
 
             Scanner scan = new Scanner(System.in);
