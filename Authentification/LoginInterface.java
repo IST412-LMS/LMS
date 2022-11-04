@@ -65,9 +65,13 @@ public class LoginInterface extends JFrame implements ActionListener {
 
                 JOptionPane.showMessageDialog(null, "Notice: username = " + login + " and = " + pass);
 
-                // returnPerson();
+                Person newDude = returnPerson(username, password);
             }
         });
+
+        // the system cannot find anything in the event handeler because it may not
+        // happen
+        // System.out.println(newDude);
 
         buttonPanel.add(submitButton);
 
@@ -82,9 +86,10 @@ public class LoginInterface extends JFrame implements ActionListener {
         System.out.println("end of init: " + p.getPassword());
     }
 
-    // public Person returnPerson() {
-    // // send returned person back to interface
-    // }
+    public Person returnPerson(String username, String password) {
+        Person newPerson = new Person(username, password);
+        return newPerson;
+    }
 
     private Person submit(JTextField userNameTextField, JTextField passwordTextField) {
         JOptionPane.showMessageDialog(null, "Notice: Selected submit.");
