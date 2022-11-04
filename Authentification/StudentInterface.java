@@ -2,10 +2,13 @@ package learningmanagementsystem.Authentification;
 
 import learningmanagementsystem.Assignments.AssignmentList;
 import learningmanagementsystem.Communication.Inbox;
+import learningmanagementsystem.Authentification.Tabs;
 
 import java.util.Scanner;
 
 public class StudentInterface {
+    Tabs tabs = new Tabs();
+
     public StudentInterface(Person s1) {
         System.out.println("Welcome to Student Interface, " + s1.getName());
         System.out.println("Select Functionality:");

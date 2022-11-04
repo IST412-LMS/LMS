@@ -11,8 +11,9 @@ public class LoginController {
 
     public LoginController() {
         this.li = new LoginInterface();
-        p1 = li.Login();
-        int user = p1.verifyUser();
+        li.setVisible(true);
+        p1 = li.LoginInterface();
+        int user = p1.verifyUser(li);
         switch (user) {
             case 1:
                 this.fm = new FacultyMgmtController(this.p1);

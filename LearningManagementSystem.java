@@ -6,6 +6,7 @@
 package learningmanagementsystem;
 
 import learningmanagementsystem.Authentification.LoginController;
+import learningmanagementsystem.Authentification.Tabs;
 
 /**
  *
@@ -14,18 +15,17 @@ import learningmanagementsystem.Authentification.LoginController;
 public class LearningManagementSystem {
 
     public static void main(String[] args) {
-        //authenticate
-        //show the buttons choosen for authentication
-        //if the user clicks assignment evaluation we show a gradebook
-            //checks if the selected assignment has been graded
-            //if yes show uplaod grade
-            //if no show grade assignment
-        //if the user clicks assignment submission we show assignment list
-            //they can select an assignment and choose viewAssignment
-            //from there they can submit
-        //if the user clicks communication we show checkInbox
-            //if they select edit, open a send email box
-        System.out.println("Here is everything you need");
+        // authenticate
+        // show the buttons choosen for authentication
+        // if the user clicks assignment evaluation we show a gradebook
+        // checks if the selected assignment has been graded
+        // if yes show uplaod grade
+        // if no show grade assignment
+        // if the user clicks assignment submission we show assignment list
+        // they can select an assignment and choose viewAssignment
+        // from there they can submit
+        // if the user clicks communication we show checkInbox
+        // if they select edit, open a send email box
         LoginController lc = new LoginController();
     }
 }
