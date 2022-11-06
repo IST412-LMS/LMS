@@ -3,6 +3,12 @@
 ## Authentification
 The system starts with authentification. If a user is authenticated as a faculty they can see the assignment evaluation and communication methods. If a user is authenticated as a student they can see the assignment submision and communication methods. 
 
+## Use Case #1 - Communication
+The system allows users to communicate via email. Although we don't actually haveit hooked up to an email API, when an email is sent it is added to a file. This file then can be read if the user wants to see sent emails. A second file for recieved emails can also be read.In order to test communication on the command line use either the faculty or student login. Then choose '#2 Communication'. From here you can send emails, read the sent ones, or read the recieved ones. 
+
+## Navigation
+We are currently working on a process for navigation but have run into a few hiccups. For now the command line can be used to get through the different functions. Below in the testing section you can find directions, or just follow the output on the terminal.
+
 ## Methods
 - The assignment list shows a list of assignments and allows to select specific assignments
 - The assignment class includes grading, uploading, viewing and submitting
