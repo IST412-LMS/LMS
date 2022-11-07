@@ -28,7 +28,7 @@ public class InboxInterface extends JFrame implements ActionListener {
 
     public void initComponents() {
         // navigation tabs
-        setTitle("Faculty Interface");
+        setTitle("Inbox Interface");
         setSize(600, 350);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

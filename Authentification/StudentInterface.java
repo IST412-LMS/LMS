@@ -28,7 +28,7 @@ public class StudentInterface extends JFrame implements ActionListener {
 
     public void initComponents() {
         // navigation tabs
-        setTitle("Faculty Interface");
+        setTitle("Student Interface");
         setSize(600, 350);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
