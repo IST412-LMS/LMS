@@ -1,15 +1,97 @@
 package learningmanagementsystem.Authentification;
 
 import learningmanagementsystem.Assignments.AssignmentList;
-import learningmanagementsystem.Communication.Inbox;
+import learningmanagementsystem.Communication.InboxController;
 import learningmanagementsystem.Authentification.Tabs;
-
 import java.util.Scanner;
+import javax.swing.*;
 
-public class StudentInterface {
-    Tabs tabs = new Tabs();
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-    public StudentInterface(Person s1) {
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import learningmanagementsystem.Assignments.Assignment;
+import learningmanagementsystem.Communication.InboxInterface;
+
+public class StudentInterface extends JFrame implements ActionListener {
+    JPanel buttonPanel;
+    JPanel instrumentPanel;
+
+    public void initComponents() {
+        // navigation tabs
+        setTitle("Faculty Interface");
+        setSize(600, 350);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // this.setResizable(false);
+        // this.setLayout(null);
+
+        instrumentPanel = new JPanel(new GridLayout(5, 1));
+        instrumentPanel.add(new JLabel("Welcome to Student Interface. Select Functionality:"));
+
+        buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+
+        JButton communicationButton = new JButton("Communication");
+        JButton assignmentSubmissionButton = new JButton("Assignment Submission");
+        JButton backButton = new JButton("Return to login");
+
+        communicationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // make inbox interface
+                InboxInterface ii = new InboxInterface();
+                ii.initComponents();
+                ii.setVisible(true);
+            }
+        });
+
+        assignmentSubmissionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Notice: Selected submit.");
+            }
+        });
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LoginInterface li = new LoginInterface();
+                li.initComponents();
+                li.setVisible(true);
+            }
+        });
+
+        // JPanel panel1 = new JPanel();
+        // JPanel panel2 = new JPanel();
+
+        // JTabbedPane tabbedPane = new JTabbedPane();
+        // tabbedPane.setBounds(50, 50, 400, 400);
+
+        // tabbedPane.add("Communication", panel2);
+        // tabbedPane.add("Assignment Grading", panel1);
+
+        // this.add(tabbedPane);
+        buttonPanel.add(communicationButton);
+        buttonPanel.add(assignmentSubmissionButton);
+        buttonPanel.add(backButton);
+
+        getContentPane().add(instrumentPanel, BorderLayout.CENTER);
+        getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+
+        this.setVisible(true);
+    }
+
+    public void OldStudentInterface(Person s1) {
         System.out.println("Welcome to Student Interface, " + s1.getName());
         System.out.println("Select Functionality:");
         System.out.println("1. Assignment Submissions ");
@@ -27,13 +109,19 @@ public class StudentInterface {
             case 2:
                 // TODO go to communication
                 System.out.println("Here is communication");
-                Inbox inbox = new Inbox();
-                inbox.CheckInbox();
+                InboxController inbox = new InboxController();
+                // inbox.CheckInbox();
                 break;
             case 3:
                 return;
             default:
                 break;
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        JOptionPane.showMessageDialog(null, "Notice: Entered event listener wrong....");
     }
 }

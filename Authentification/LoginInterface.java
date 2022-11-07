@@ -19,20 +19,10 @@ public class LoginInterface extends JFrame implements ActionListener {
     final JTextField userNameTextField = new JTextField(15);
     final JTextField passwordTextField = new JTextField(15);
 
-    Person p = new Person("dummy username", "dummy password");
-
     JPanel instrumentPanel;
     JPanel buttonPanel;
 
-    public Person LoginInterface() {
-        initComponents();
-        // Person submittedPerson = submit(userNameTextField, passwordTextField);
-        System.out.println("login interface: " + p.getLogin());
-        System.out.println("login interface: " + p.getPassword());
-        return p;
-    }
-
-    private void initComponents() {
+    public void initComponents() {
         setTitle("Welcome to the Learning Management System");
         setSize(600, 350);
         setLocationRelativeTo(null);
@@ -51,54 +41,36 @@ public class LoginInterface extends JFrame implements ActionListener {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                LoginController lc = new LoginController();
+                // JOptionPane.showMessageDialog(null, "Notice: submit was clicked");
+                // Boolean submitClicked = true;
+                // submit(userNameTextField, passwordTextField);
                 String username = userNameTextField.getText();
                 String password = passwordTextField.getText();
 
-                p.setLogin(username);
-                p.setPassword(password);
+                Person p = new Person(username, password);
 
-                String login = p.getLogin();
-                String pass = p.getPassword();
-
-                System.out.println("after submit: " + login);
-                System.out.println("after submit: " + pass);
-
-                JOptionPane.showMessageDialog(null, "Notice: username = " + login + " and = " + pass);
-
-                Person newDude = returnPerson(username, password);
+                lc.submitClicked(p);
             }
         });
-
-        // the system cannot find anything in the event handeler because it may not
-        // happen
-        // System.out.println(newDude);
 
         buttonPanel.add(submitButton);
 
         setContentPane(new JPanel(new BorderLayout()));
         getContentPane().add(instrumentPanel, BorderLayout.CENTER);
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
-
-        // Person p = new Person(userNameTextField.getText(),
-        // passwordTextField.getText());
-
-        System.out.println("end of init: " + p.getLogin());
-        System.out.println("end of init: " + p.getPassword());
     }
 
-    public Person returnPerson(String username, String password) {
-        Person newPerson = new Person(username, password);
-        return newPerson;
-    }
+    // public void submit(JTextField userNameTextField, JTextField
+    // passwordTextField) {
+    // JOptionPane.showMessageDialog(null, "Notice: Selected submit.");
+    // String username = userNameTextField.getText();
+    // String password = passwordTextField.getText();
 
-    private Person submit(JTextField userNameTextField, JTextField passwordTextField) {
-        JOptionPane.showMessageDialog(null, "Notice: Selected submit.");
-        String username = userNameTextField.getText();
-        String password = passwordTextField.getText();
+    // Person p = new Person(username, password);
 
-        Person p = new Person(username, password);
-        return p;
-    }
+    // LoginController.submitClicked(p);
+    // }
 
     @Override
     public void actionPerformed(ActionEvent e) {

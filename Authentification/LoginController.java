@@ -6,20 +6,25 @@ import learningmanagementsystem.Authentification.StudentInterface;
 public class LoginController {
     private Person p1;
     FacultyMgmtController fm;
-    StudentInterface si;
-    private LoginInterface li;
+    StudentController si;
+    public LoginInterface li;
 
     public LoginController() {
+        // make opening interface
         this.li = new LoginInterface();
+        li.initComponents();
         li.setVisible(true);
-        p1 = li.LoginInterface();
+    }
+
+    public void submitClicked(Person p1) {
+        li = new LoginInterface();
         int user = p1.verifyUser(li);
         switch (user) {
             case 1:
-                this.fm = new FacultyMgmtController(this.p1);
+                this.fm = new FacultyMgmtController();
                 break;
             case 2:
-                this.si = new StudentInterface(this.p1);
+                this.si = new StudentController();
                 break;
             default:
                 break;

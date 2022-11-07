@@ -17,33 +17,75 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import learningmanagementsystem.Assignments.Assignment;
-import learningmanagementsystem.Communication.Inbox;
+import learningmanagementsystem.Communication.InboxController;
+import learningmanagementsystem.Communication.InboxInterface;
 
-public class FacultyInterface extends JFrame {
-    public FacultyInterface() {
-        initComponents();
-    }
+public class FacultyInterface extends JFrame implements ActionListener {
+    JPanel buttonPanel;
+    JPanel instrumentPanel;
 
-    private void initComponents() {
+    public void initComponents() {
         // navigation tabs
         setTitle("Faculty Interface");
         setSize(600, 350);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.setResizable(false);
-        this.setLayout(null);
+        // this.setResizable(false);
+        // this.setLayout(null);
 
-        JPanel panel1 = new JPanel();
-        JPanel panel2 = new JPanel();
+        instrumentPanel = new JPanel(new GridLayout(5, 1));
+        instrumentPanel.add(new JLabel("Welcome to Faculty Interface. Select Functionality:"));
 
-        JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.setBounds(50, 50, 400, 400);
+        buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
-        tabbedPane.add("Communication", panel2);
-        tabbedPane.add("Assignment Grading", panel1);
+        JButton communicationButton = new JButton("Communication");
+        JButton assignmentGradingButton = new JButton("Assignment Grading");
+        JButton backButton = new JButton("Return to login");
 
-        this.add(tabbedPane);
+        communicationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // make inbox interface
+                InboxInterface ii = new InboxInterface();
+                ii.initComponents();
+                ii.setVisible(true);
+            }
+        });
+
+        assignmentGradingButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Notice: Selected grading.");
+            }
+        });
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LoginInterface li = new LoginInterface();
+                li.initComponents();
+                li.setVisible(true);
+            }
+        });
+
+        // JPanel panel1 = new JPanel();
+        // JPanel panel2 = new JPanel();
+
+        // JTabbedPane tabbedPane = new JTabbedPane();
+        // tabbedPane.setBounds(50, 50, 400, 400);
+
+        // tabbedPane.add("Communication", panel2);
+        // tabbedPane.add("Assignment Grading", panel1);
+
+        // this.add(tabbedPane);
+        buttonPanel.add(communicationButton);
+        buttonPanel.add(assignmentGradingButton);
+        buttonPanel.add(backButton);
+
+        getContentPane().add(instrumentPanel, BorderLayout.CENTER);
+        getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+
         this.setVisible(true);
     }
 
@@ -75,13 +117,19 @@ public class FacultyInterface extends JFrame {
             case 2:
                 // TODO go to communication
                 System.out.println("Here is communication");
-                Inbox inbox = new Inbox();
-                inbox.CheckInbox();
+                // InboxController inbox = new InboxController();
+                // inbox.CheckInbox();
                 break;
             case 3:
                 return;
             default:
                 break;
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        JOptionPane.showMessageDialog(null, "Notice: Entered event listener wrong....");
     }
 }

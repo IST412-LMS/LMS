@@ -6,7 +6,6 @@
 package learningmanagementsystem;
 
 import learningmanagementsystem.Authentification.LoginController;
-import learningmanagementsystem.Authentification.Tabs;
 
 /**
  *
