@@ -36,7 +36,6 @@ public class ReadEmailsInterface extends JFrame implements ActionListener {
         JButton backButton = new JButton("Return to Inbox");
 
         for (String string : emailList) {
-            System.out.println(string);
             instrumentPanel.add(new JLabel(string));
         }
 

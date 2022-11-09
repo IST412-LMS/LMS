@@ -43,6 +43,24 @@ public class InboxInterface extends JFrame implements ActionListener {
         instrumentPanel.add(new JLabel("Enter Message:"));
         instrumentPanel.add(messageTextField);
 
+        String COMMIT_ACTION = "commit";
+
+        // Without this, cursor always leaves text field
+        recipientTextField.setFocusTraversalKeysEnabled(false);
+
+        // Our words to complete
+        ArrayList<String> users = new ArrayList<String>(3);
+        users.add("madison.borkovitch@gmail.com");
+        users.add("nicole.davey@gmail.com");
+        users.add("hannah.kern@gmail.com");
+        Autocomplete autoComplete = new Autocomplete(recipientTextField, users);
+        recipientTextField.getDocument().addDocumentListener(autoComplete);
+
+        // Maps the tab key to the commit action, which finishes the autocomplete
+        // when given a suggestion
+        recipientTextField.getInputMap().put(KeyStroke.getKeyStroke("TAB"), COMMIT_ACTION);
+        recipientTextField.getActionMap().put(COMMIT_ACTION, autoComplete.new CommitAction());
+
         buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
         JButton sendButton = new JButton("Send Email");
