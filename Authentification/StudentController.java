@@ -4,10 +4,10 @@ import learningmanagementsystem.Authentification.*;
 
 public class StudentController {
 
-    public StudentController() {
+    public StudentController(Person user) {
         // make faculty interface
         StudentInterface si = new StudentInterface();
-        si.initComponents();
+        si.initComponents(user);
         si.setVisible(true);
     }
 

@@ -1,8 +1,6 @@
 package learningmanagementsystem.Communication;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,13 +13,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+
+import learningmanagementsystem.Authentification.Person;
 
 public class ReadEmailsInterface extends JFrame implements ActionListener {
     JPanel buttonPanel;
     JPanel instrumentPanel;
 
-    public void initComponents(ArrayList<String> emailList) {
+    public void initComponents(ArrayList<String> emailList, Person user) {
         // navigation tabs
         setTitle("Emails Interface");
         setSize(600, 350);
@@ -43,7 +42,7 @@ public class ReadEmailsInterface extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 InboxInterface ii = new InboxInterface();
-                ii.initComponents();
+                ii.initComponents(user);
                 ii.setVisible(true);
             }
         });

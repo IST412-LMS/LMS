@@ -29,6 +29,7 @@ public class LoginInterface extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         instrumentPanel = new JPanel(new GridLayout(5, 1));
+        instrumentPanel.add(new JLabel("use either FACULTY, facIST123 or STUDENT, studIST123"));
         instrumentPanel.add(new JLabel("Enter Login"));
         instrumentPanel.add(userNameTextField);
         instrumentPanel.add(new JLabel("Enter Password"));

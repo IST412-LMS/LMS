@@ -21,10 +21,10 @@ public class LoginController {
         int user = p1.verifyUser(li);
         switch (user) {
             case 1:
-                this.fm = new FacultyMgmtController();
+                this.fm = new FacultyMgmtController(p1);
                 break;
             case 2:
-                this.si = new StudentController();
+                this.si = new StudentController(p1);
                 break;
             default:
                 break;

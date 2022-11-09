@@ -5,10 +5,10 @@ import learningmanagementsystem.Authentification.Person;
 public class FacultyMgmtController {
     public FacultyInterface fi;
 
-    public FacultyMgmtController() {
+    public FacultyMgmtController(Person user) {
         // make faculty interface
         this.fi = new FacultyInterface();
-        fi.initComponents();
+        fi.initComponents(user);
         fi.setVisible(true);
     }
 }

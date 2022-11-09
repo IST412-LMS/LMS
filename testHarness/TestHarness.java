@@ -14,6 +14,7 @@ import learningmanagementsystem.Authentification.LoginController;
  */
 public class TestHarness {
     public static void main(String[] args) {
+        // use either FACULTY, facIST123 or STUDENT, studIST123
         // calls the login controller
         LoginController lc = new LoginController();
 

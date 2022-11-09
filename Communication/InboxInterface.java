@@ -17,7 +17,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import learningmanagementsystem.Authentification.FacultyMgmtController;
 import learningmanagementsystem.Authentification.LoginInterface;
+import learningmanagementsystem.Authentification.Person;
+import learningmanagementsystem.Authentification.StudentController;
 
 public class InboxInterface extends JFrame implements ActionListener {
     final JTextField recipientTextField = new JTextField(15);
@@ -26,7 +29,7 @@ public class InboxInterface extends JFrame implements ActionListener {
     JPanel buttonPanel;
     JPanel instrumentPanel;
 
-    public void initComponents() {
+    public void initComponents(Person user) {
         // navigation tabs
         setTitle("Inbox Interface");
         setSize(600, 350);
@@ -49,10 +52,11 @@ public class InboxInterface extends JFrame implements ActionListener {
         recipientTextField.setFocusTraversalKeysEnabled(false);
 
         // Our words to complete
-        ArrayList<String> users = new ArrayList<String>(3);
+        ArrayList<String> users = new ArrayList<String>(5);
         users.add("madison.borkovitch@gmail.com");
         users.add("nicole.davey@gmail.com");
         users.add("hannah.kern@gmail.com");
+        users.add("abc@gmail.com");
         Autocomplete autoComplete = new Autocomplete(recipientTextField, users);
         recipientTextField.getDocument().addDocumentListener(autoComplete);
 
@@ -66,7 +70,7 @@ public class InboxInterface extends JFrame implements ActionListener {
         JButton sendButton = new JButton("Send Email");
         JButton readSentButton = new JButton("Read Sent Emails");
         JButton readRecievedButton = new JButton("Read Recieved Emails");
-        JButton backButton = new JButton("Back to login");
+        JButton backButton = new JButton("Return to home");
 
         sendButton.addActionListener(new ActionListener() {
             @Override
@@ -89,7 +93,7 @@ public class InboxInterface extends JFrame implements ActionListener {
                 ArrayList<String> results = ic.ReadSentEmail();
 
                 ReadEmailsInterface rei = new ReadEmailsInterface();
-                rei.initComponents(results);
+                rei.initComponents(results, user);
                 rei.setVisible(true);
             }
         });
@@ -102,7 +106,7 @@ public class InboxInterface extends JFrame implements ActionListener {
                 ArrayList<String> results = ic.ReadRecievedEmail();
 
                 ReadEmailsInterface rei = new ReadEmailsInterface();
-                rei.initComponents(results);
+                rei.initComponents(results, user);
                 rei.setVisible(true);
             }
         });
@@ -110,10 +114,21 @@ public class InboxInterface extends JFrame implements ActionListener {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // can only go back to login for now because we dont know who it is
                 LoginInterface li = new LoginInterface();
-                li.initComponents();
-                li.setVisible(true);
+                FacultyMgmtController fm;
+                StudentController si;
+
+                int result = user.verifyUser(li);
+                switch (result) {
+                    case 1:
+                        fm = new FacultyMgmtController(user);
+                        break;
+                    case 2:
+                        si = new StudentController(user);
+                        break;
+                    default:
+                        break;
+                }
             }
         });
 

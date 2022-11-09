@@ -26,7 +26,7 @@ public class StudentInterface extends JFrame implements ActionListener {
     JPanel buttonPanel;
     JPanel instrumentPanel;
 
-    public void initComponents() {
+    public void initComponents(Person user) {
         // navigation tabs
         setTitle("Student Interface");
         setSize(600, 350);
@@ -50,7 +50,7 @@ public class StudentInterface extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 // make inbox interface
                 InboxInterface ii = new InboxInterface();
-                ii.initComponents();
+                ii.initComponents(user);
                 ii.setVisible(true);
             }
         });

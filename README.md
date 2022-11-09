@@ -12,7 +12,15 @@ The system allows users to communicate via email. Although we don't actually hav
 
 We are currently working on a process for navigation but have run into a few hiccups. For now it works but if you are in the inbox, instead of returning to the faculty or student home, you have to re login. When we finish our design patterns, we will have a chain of responsibility that should send the user through every interface. This will make sure we are returning to the previoud page.
 
-## Methods
+## User Interface Design Patterns
+
+One of the user interface design patterns is autocomplete. You can find this in the communication section of the program. Whenever a user types in the first two letters of a recipient email such as 'ha' the email 'hannah.kern@gmail.com' will be shown. Then the user can select tab and the email is input.
+
+## Object Oriented Design Patterns
+
+We have included three different object oriented design patterns. The first is chain of responsibilty. This means that whenever the system gets a command it passes it through multiple interfaces. We included this pattern in the navigation system. A userslogin information is saved and sent through multiple interfaces. This means that when they hit the communication screen, if they want to go back, they can return to the appropriate interface. This would be either faculty interface or student interface.
+
+## Old Methods
 
 - The assignment list shows a list of assignments and allows to select specific assignments
 - The assignment class includes grading, uploading, viewing and submitting
