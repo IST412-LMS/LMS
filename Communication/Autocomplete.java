@@ -13,6 +13,8 @@ import javax.swing.text.BadLocationException;
 
 public class Autocomplete implements DocumentListener {
 
+    // https://stackabuse.com/example-adding-autocomplete-to-jtextfield/
+
     private static enum Mode {
         INSERT,
         COMPLETION
