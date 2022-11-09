@@ -15,10 +15,10 @@ public class LearningManagementSystem {
 
     public static void main(String[] args) {
         // authenticate
-        // show the buttons choosen for authentication
+        // show the buttons chosen for authentication
         // if the user clicks assignment evaluation we show a gradebook
         // checks if the selected assignment has been graded
-        // if yes show uplaod grade
+        // if yes show upload grade
         // if no show grade assignment
         // if the user clicks assignment submission we show assignment list
         // they can select an assignment and choose viewAssignment
