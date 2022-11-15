@@ -18,7 +18,7 @@ One of the user interface design patterns is autocomplete. You can find this in 
 
 ## Object Oriented Design Patterns
 
-We have included three different object oriented design patterns. The first is chain of responsibilty. This means that whenever the system gets a command it passes it through multiple interfaces. We included this pattern in the navigation system. A userslogin information is saved and sent through multiple interfaces. This means that when they hit the communication screen, if they want to go back, they can return to the appropriate interface. This would be either faculty interface or student interface.
+We have included three different object oriented design patterns. The first is chain of responsibilty. This means that whenever the system gets a command it passes it through multiple interfaces. We included this pattern in the navigation system. A users login information is saved and sent through multiple interfaces. This means that when they hit the communication screen, if they want to go back, they can return to the appropriate interface. This would be either faculty interface or student interface.
 
 ## Old Methods
 
