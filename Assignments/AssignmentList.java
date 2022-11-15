@@ -26,7 +26,7 @@ public class AssignmentList {
         switch (choice) {
             case 1:
                 // TODO go to view page
-                System.out.println("Here is the veiw page");
+                System.out.println("Here is the view page");
                 // onCLick of specific assignemnt
                 Assignment assigView = new Assignment();
                 assigView.ViewAssignment();

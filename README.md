@@ -16,6 +16,10 @@ We are currently working on a process for navigation but have run into a few hic
 
 One of the user interface design patterns is autocomplete. You can find this in the communication section of the program. Whenever a user types in the first two letters of a recipient email such as 'ha' the email 'hannah.kern@gmail.com' will be shown. Then the user can select tab and the email is input.
 
+## Tabs Design Pattern
+
+One of the user interface design patterns is tabs. You can find this after the login screen. Here, users are able to navigate back to login, or proceed to communication, which is more fleshed out, or to grading, which our team still must implement.  
+
 ## Object Oriented Design Patterns
 
 We have included three different object oriented design patterns. The first is chain of responsibilty. This means that whenever the system gets a command it passes it through multiple interfaces. We included this pattern in the navigation system. A users login information is saved and sent through multiple interfaces. This means that when they hit the communication screen, if they want to go back, they can return to the appropriate interface. This would be either faculty interface or student interface.

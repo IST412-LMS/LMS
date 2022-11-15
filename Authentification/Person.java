@@ -5,18 +5,13 @@ import java.util.Date;
 public class Person {
     private String loginID;
     private String password;
-    private Date pwdUpdateDate;
     private String Name;
-    private String psuID;
 
     public Person(String login, String pwd) {
         this.loginID = login;
         this.password = pwd;
     }
 
-    public void setPsuID(String psuID) {
-        this.psuID = psuID;
-    }
 
     public String getName() {
         return Name;
@@ -35,29 +30,3 @@ public class Person {
             return 0;
         }
     }
-
-    public void updatePassword() {
-    };
-
-    // Method 1 - Getter
-    public String getLogin() {
-        return this.loginID;
-    }
-
-    // Method 2 - Setter
-    public void setLogin(String N) {
-        // This keyword refers to current instance itself
-        this.loginID = N;
-    }
-
-    // Method 1 - Getter
-    public String getPassword() {
-        return this.password;
-    }
-
-    // Method 2 - Setter
-    public void setPassword(String N) {
-        // This keyword refers to current instance itself
-        this.password = N;
-    }
-}
