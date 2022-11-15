@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import learningmanagementsystem.Assignments.Assignment;
+import learningmanagementsystem.Assignments.AssignmentInterface;
 import learningmanagementsystem.Communication.InboxController;
 import learningmanagementsystem.Communication.InboxInterface;
 
@@ -56,7 +57,10 @@ public class FacultyInterface extends JFrame implements ActionListener {
         assignmentGradingButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Notice: Selected grading.");
+                // JOptionPane.showMessageDialog(null, "Notice: Selected grading.");
+                AssignmentInterface newAssignment = new AssignmentInterface();
+                newAssignment.initComponents(user);
+                newAssignment.setVisible(true);
             }
         });
 

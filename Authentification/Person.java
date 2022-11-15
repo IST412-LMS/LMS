@@ -12,7 +12,6 @@ public class Person {
         this.password = pwd;
     }
 
-
     public String getName() {
         return Name;
     }
@@ -30,3 +29,4 @@ public class Person {
             return 0;
         }
     }
+}

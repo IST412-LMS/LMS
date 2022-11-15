@@ -4,44 +4,28 @@
  */
 package learningmanagementsystem.Assignments;
 
-import java.util.Scanner;
+import java.util.HashMap;
 
-/**
- * 1. shows assignments
- * 2. allows toggle between calendar and list view
- */
 public class AssignmentList {
-    public AssignmentList() {
-        boolean listView = true;
+    private HashMap<String, Integer> assignmentList = new HashMap<String, Integer>();
 
-        // allow assignment to be seen
-        System.out.println("Select Option:");
-        System.out.println("1. Select Assignment");
-        System.out.println("2. Change view");
-        System.out.println("3. Exit Application");
+    public HashMap<String, Integer> AssignmentList() {
+        // hard coded values for now
+        assignmentList.put("Assignment 1", 100);
+        assignmentList.put("Assignment 2", 90);
+        assignmentList.put("Assignment 3", 100);
+        assignmentList.put("Assignment 4", 75);
+        assignmentList.put("Assignment 5", 100);
 
-        Scanner mScan = new Scanner(System.in);
-        int choice = mScan.nextInt();
+        return assignmentList;
+    }
 
-        switch (choice) {
-            case 1:
-                // TODO go to view page
-                System.out.println("Here is the view page");
-                // onCLick of specific assignemnt
-                Assignment assigView = new Assignment();
-                assigView.ViewAssignment();
-                break;
-            case 2:
-                System.out.println("Changing view");
-                if (listView == true) {
-                    // change view
-                    // update boolean
-                    listView = false;
-                }
-            case 3:
-                return;
-            default:
-                break;
-        }
+    public Integer getPoints(String name) {
+        return assignmentList.get(name);
+    }
+
+    public void setPoints(String name, Integer points) {
+        Integer oldValue = getPoints(name);
+        assignmentList.replace(name, oldValue, points);
     }
 }
