@@ -4,7 +4,7 @@ public class Assignment {
     private String Points;
     private String Name;
 
-    public void Assigment(String points, String name) {
+    public Assignment(String points, String name) {
         this.Points = points;
         this.Name = name;
     }
@@ -15,5 +15,9 @@ public class Assignment {
 
     public String getPoints() {
         return Points;
+    }
+
+    public void setPoints(String newPoints) {
+        Points = newPoints;
     }
 }
