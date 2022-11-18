@@ -32,16 +32,16 @@ public class AssignmentList {
         for (int i = 1; i < assignHM.size(); i++) {
             Assignment newAssignment = assignHM.get(i);
             String newAssName = newAssignment.getName();
-            System.out.println("newAssignemnt: " + newAssignment + " and new name: " + newAssName);
 
             String changedAssName = changedAssignment.getName();
-            System.out.println("changed name: " + changedAssName);
 
             // check between changed assignment and current one in assignHM
             if (changedAssName == newAssName) {
                 // update the assignHM
-                assignHM.replace(i, changedAssignment);
                 changedAssignment.setPoints(newGrade);
+                assignHM.replace(i, changedAssignment);
+                System.out.println("i @setAssignmentGrade , assignment list" + i);
+                System.out.println("chosen assignment points @setAssignmentGrade " + changedAssignment.getPoints());
             }
         }
 
@@ -49,7 +49,6 @@ public class AssignmentList {
     }
 
     public Assignment getAssignment(HashMap<Integer, Assignment> assignmentList, Integer key) {
-        // System.out.println("assignmentlist is: " + assignmentList.get(key));
         return assignmentList.get(key);
     }
 

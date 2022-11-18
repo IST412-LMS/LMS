@@ -18,11 +18,9 @@ public class Person {
 
     public int verifyUser(LoginInterface li) {
         if (loginID.equals("FACULTY") && password.equals("facIST123")) {
-            System.out.println("is a faculty");
             return 1;
         } else if (loginID.equals("STUDENT") && password.equals("studIST123")) {
             this.Name = loginID;
-            System.out.println("is a student");
             return 2;
         } else {
             li.brokenPassword();

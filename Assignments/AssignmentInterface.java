@@ -23,9 +23,15 @@ public class AssignmentInterface extends JFrame implements ActionListener {
     JPanel instrumentPanel;
     AssignmentList assignments = new AssignmentList();
     ArrayList<String> assignAL = new ArrayList<String>();
-    HashMap<Integer, Assignment> assignHM = assignments.AssignmentList();
+    HashMap<Integer, Assignment> assignHM = new HashMap<>();
 
-    public void initComponents(Person user) {
+    public void initComponents(Person user, HashMap<Integer, Assignment> newAssignHM) {
+        if (newAssignHM == null) {
+            assignHM = assignments.AssignmentList();
+        } else {
+            assignHM = newAssignHM;
+        }
+
         // navigation tabs
         setTitle("Assignment Interface");
         setSize(600, 350);
@@ -37,7 +43,6 @@ public class AssignmentInterface extends JFrame implements ActionListener {
 
         for (int i = 1; i < 6; i++) {
             Assignment newAssignment = assignments.getAssignment(assignHM, i);
-            System.out.println("i is: " + i + " and assignment list is: " + newAssignment);
             String newAssName = newAssignment.getName();
             assignAL.add(newAssName);
         }
@@ -61,13 +66,12 @@ public class AssignmentInterface extends JFrame implements ActionListener {
                 Assignment chosenAssignment = new Assignment("System error", "System error");
                 for (int i = 1; i < assignAL.size(); i++) {
                     Assignment newAssignment = assignments.getAssignment(assignHM, i);
-                    // String newAssName = newAssignment.getName();
-                    System.out.println("newAssignemnt: " + newAssignment);
 
                     if (chosenAssignmentString == newAssignment.getName()) {
                         chosenAssignment = newAssignment;
                     }
                 }
+                System.out.println("chosen assignment points @select button " + chosenAssignment.getPoints());
                 avi.initComponents(user, chosenAssignment);
             }
         });

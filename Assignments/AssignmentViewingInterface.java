@@ -59,6 +59,12 @@ public class AssignmentViewingInterface extends JFrame implements ActionListener
                         String newGrade = gradeTextField.getText();
                         assignHM = assignments.setAssignmentGrade(assignHM, selectedAssignment, newGrade);
                         AssignmentViewingInterface avi = new AssignmentViewingInterface();
+                        System.out.println("selected assignment points @grade button before return"
+                                + selectedAssignment.getPoints());
+                        Assignment checkingAss = assignHM.get(1);
+                        Assignment checkingAss2 = assignHM.get(2);
+                        System.out.println("assignHM points @grade button before return " + checkingAss.getPoints()
+                                + checkingAss2.getPoints());
                         avi.initComponents(user, selectedAssignment);
                     }
                 });
@@ -77,7 +83,7 @@ public class AssignmentViewingInterface extends JFrame implements ActionListener
             @Override
             public void actionPerformed(ActionEvent e) {
                 AssignmentInterface ai = new AssignmentInterface();
-                ai.initComponents(user);
+                ai.initComponents(user, assignHM);
             }
         });
 

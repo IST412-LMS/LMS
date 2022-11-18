@@ -1,5 +1,6 @@
 package learningmanagementsystem.Authentification;
 
+import java.util.HashMap;
 import java.util.Scanner;
 import javax.swing.*;
 
@@ -18,6 +19,7 @@ import javax.swing.JTextField;
 
 import learningmanagementsystem.Assignments.Assignment;
 import learningmanagementsystem.Assignments.AssignmentInterface;
+import learningmanagementsystem.Assignments.AssignmentList;
 import learningmanagementsystem.Communication.InboxController;
 import learningmanagementsystem.Communication.InboxInterface;
 
@@ -58,8 +60,10 @@ public class FacultyInterface extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // JOptionPane.showMessageDialog(null, "Notice: Selected grading.");
+                AssignmentList newAL = new AssignmentList();
+                HashMap<Integer, Assignment> newHM = newAL.AssignmentList();
                 AssignmentInterface newAssignment = new AssignmentInterface();
-                newAssignment.initComponents(user);
+                newAssignment.initComponents(user, newHM);
                 newAssignment.setVisible(true);
             }
         });
