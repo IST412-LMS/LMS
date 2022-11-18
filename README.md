@@ -8,6 +8,10 @@ The system starts with authentification. If a user is authenticated as a faculty
 
 The system allows users to communicate via email. Although we don't actually have it hooked up to an email API, when an email is sent it is added to a file. This file then can be read if the user wants to see sent emails. A second file for recieved emails can also be read. In order to test communication use either the faculty or student login (FACULTY, facIST123 or STUDENT studIST123). Then choose 'Communication'. From here you can send emails, read the sent ones, or read the recieved ones.
 
+## Use Case #2 - Assignment Grading
+
+The system allows for someone with a Faculty login to edit an assignment grade. This works by using a text field to take user input on the AssignmentViewingInterface and save it to the hashmap that holds the assignments. In order to test grading use the faculty login (FACULTY, facIST123). Then choose 'Assignment Grading'. From here you can select an assigment and choose 'View Selected Assignment'. Change the text field and press 'Grade Assignment'. You should see the page reload and the grade change to what your input was.
+
 ## Navigation
 
 We are currently working on a process for navigation but have run into a few hiccups. For now it works but if you are in the inbox, instead of returning to the faculty or student home, you have to re login. When we finish our design patterns, we will have a chain of responsibility that should send the user through every interface. This will make sure we are returning to the previoud page.
