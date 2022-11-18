@@ -27,6 +27,7 @@ public class AssignmentInterface extends JFrame implements ActionListener {
 
     public void initComponents(Person user, HashMap<Integer, Assignment> newAssignHM) {
         if (newAssignHM == null) {
+            System.out.println("null list");
             assignHM = assignments.AssignmentList();
         } else {
             assignHM = newAssignHM;

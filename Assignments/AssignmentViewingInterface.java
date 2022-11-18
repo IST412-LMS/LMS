@@ -27,7 +27,7 @@ public class AssignmentViewingInterface extends JFrame implements ActionListener
     ArrayList<String> assignAL = new ArrayList<String>();
     HashMap<Integer, Assignment> assignHM = assignments.AssignmentList();
 
-    public void initComponents(Person user, Assignment selectedAssignment) {
+    public HashMap<Integer, Assignment> initComponents(Person user, Assignment selectedAssignment) {
         // navigation tabs
         setTitle("Assignment Viewing Interface");
         setSize(600, 350);
@@ -47,27 +47,8 @@ public class AssignmentViewingInterface extends JFrame implements ActionListener
         int result = user.verifyUser(li);
         switch (result) {
             case 1:
-                JButton gradeButton = new JButton("Grade Assignment");
-                buttonPanel.add(gradeButton);
-
                 instrumentPanel.add(new JLabel("Enter New Grade:"));
                 instrumentPanel.add(gradeTextField);
-
-                gradeButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        String newGrade = gradeTextField.getText();
-                        assignHM = assignments.setAssignmentGrade(assignHM, selectedAssignment, newGrade);
-                        AssignmentViewingInterface avi = new AssignmentViewingInterface();
-                        System.out.println("selected assignment points @grade button before return"
-                                + selectedAssignment.getPoints());
-                        Assignment checkingAss = assignHM.get(1);
-                        Assignment checkingAss2 = assignHM.get(2);
-                        System.out.println("assignHM points @grade button before return " + checkingAss.getPoints()
-                                + checkingAss2.getPoints());
-                        avi.initComponents(user, selectedAssignment);
-                    }
-                });
                 break;
             case 2:
                 JButton submitButton = new JButton("Submit Assignment");
@@ -77,12 +58,33 @@ public class AssignmentViewingInterface extends JFrame implements ActionListener
                 break;
         }
 
-        JButton backButton = new JButton("Return to Assignment List");
+        JButton backButton = new JButton("Save & Return to Assignment List");
 
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 AssignmentInterface ai = new AssignmentInterface();
+                String newGrade = "ERROR";
+                if (gradeTextField.getText() == "") {
+                    System.out.println(gradeTextField.getText());
+                    System.out.println("null");
+                    newGrade = selectedAssignment.getPoints();
+                } else {
+                    System.out.println("not null");
+                    System.out.println(gradeTextField.getText());
+                    newGrade = gradeTextField.getText();
+                }
+                assignHM = assignments.setAssignmentGrade(assignHM, selectedAssignment, newGrade);
+                Assignment checkingAss = assignHM.get(1);
+                Assignment checkingAss2 = assignHM.get(2);
+                Assignment checkingAss3 = assignHM.get(3);
+                Assignment checkingAss4 = assignHM.get(4);
+                Assignment checkingAss5 = assignHM.get(5);
+                System.out.println("returning list: " + checkingAss.getPoints() + " and "
+                        + checkingAss2.getPoints() + " and "
+                        + checkingAss3.getPoints() + " and "
+                        + checkingAss4.getPoints() + " and "
+                        + checkingAss5.getPoints());
                 ai.initComponents(user, assignHM);
             }
         });
@@ -93,6 +95,8 @@ public class AssignmentViewingInterface extends JFrame implements ActionListener
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
         this.setVisible(true);
+
+        return assignHM;
     }
 
     @Override
