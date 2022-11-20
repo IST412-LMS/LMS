@@ -12,6 +12,30 @@ The system allows users to communicate via email. Although we don't actually hav
 
 The system allows for someone with a Faculty login to edit an assignment grade. This works by using a text field to take user input on the AssignmentViewingInterface and save it to the hashmap that holds the assignments. In order to test grading use the faculty login (FACULTY, facIST123). Then choose 'Assignment Grading'. From here you can select an assigment and choose 'View Selected Assignment'. Change the text field and press 'Grade Assignment'. You should see the page reload and the grade change to what your input was.
 
+## Refactoring Plan
+
+Madison was in charge of our refactoring plan. She took care of the dispensables and a few bloaters that we found in our code. Below are a list of code changes that needed made that were taken care of.
+
+### Coupler
+
+The faculty management controller and student controller are middle men. They are not used other than to call the interfaces. In the future we can either try to make these more useful or get rid of them because they slow down the system.
+
+### Bloater
+
+Our inbox controller is a large class. We have only three methods but they are very long. It takes over 100 lines of code. It may be better to split into sub classes. This will make the code more readable and easier to follow.
+
+### Dispensable
+
+The Student and Faculty classes are never used in our system. We set them up but decided to use the verify user method inside of the person class instead. Eventually we may incorporate them again, but for now they are useless. They just slow down the processing speed.
+
+### Dispensable
+
+The extra methods in the person class aren’t used in our system. They were set up when we started but we don’t plan to integrate them into the system. Eventually we may want to set PSU ID numbers or allow for password updates, but right now that is not very necessary. The one we do use a lot is verify user. This slows down the processing speed.
+
+### Dispensable
+
+Repetition of the navigation tabs is unnecessary, especially that the tabs have been integrated into the interface. This can slow down the system’s processing and runtime, as well as create confusion among developers. Our example is the Tabs class (or Tabs.zip on Github.)
+
 ## Navigation
 
 We are currently working on a process for navigation but have run into a few hiccups. For now it works but if you are in the inbox, instead of returning to the faculty or student home, you have to re login. When we finish our design patterns, we will have a chain of responsibility that should send the user through every interface. This will make sure we are returning to the previoud page.
@@ -22,7 +46,7 @@ One of the user interface design patterns is autocomplete. You can find this in 
 
 ## Tabs Design Pattern
 
-One of the user interface design patterns is tabs. You can find this after the login screen. Here, users are able to navigate back to login, or proceed to communication, which is more fleshed out, or to grading, which our team still must implement.  
+One of the user interface design patterns is tabs. You can find this after the login screen. Here, users are able to navigate back to login, or proceed to communication, which is more fleshed out, or to grading, which our team still must implement.
 
 ## Object Oriented Design Patterns
 

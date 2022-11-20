@@ -17,10 +17,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import learningmanagementsystem.Authentification.FacultyMgmtController;
+import learningmanagementsystem.Authentification.FacultyInterface;
 import learningmanagementsystem.Authentification.LoginInterface;
 import learningmanagementsystem.Authentification.Person;
-import learningmanagementsystem.Authentification.StudentController;
+import learningmanagementsystem.Authentification.StudentInterface;
 
 public class InboxInterface extends JFrame implements ActionListener {
     final JTextField recipientTextField = new JTextField(15);
@@ -115,16 +115,20 @@ public class InboxInterface extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 LoginInterface li = new LoginInterface();
-                FacultyMgmtController fm;
-                StudentController si;
+                FacultyInterface fm;
+                StudentInterface si;
 
                 int result = user.verifyUser(li);
                 switch (result) {
                     case 1:
-                        fm = new FacultyMgmtController(user);
+                        fm = new FacultyInterface();
+                        fm.initComponents(user);
+                        fm.setVisible(true);
                         break;
                     case 2:
-                        si = new StudentController(user);
+                        si = new StudentInterface();
+                        si.initComponents(user);
+                        si.setVisible(true);
                         break;
                     default:
                         break;
