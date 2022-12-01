@@ -1,6 +1,7 @@
 package learningmanagementsystem.Authentification;
 
 import learningmanagementsystem.Assignments.AssignmentList;
+import learningmanagementsystem.Assignments.AssignmentSubmissionInterface;
 import learningmanagementsystem.Communication.InboxController;
 import learningmanagementsystem.Authentification.Tabs;
 
@@ -61,10 +62,8 @@ public class StudentInterface extends JFrame implements ActionListener {
         assignmentSubmissionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AssignmentList newAL = new AssignmentList();
-                HashMap<Integer, Assignment> newHM = newAL.AssignmentList();
-                AssignmentInterface newAssignment = new AssignmentInterface();
-                newAssignment.initComponents(user, newHM);
+                AssignmentSubmissionInterface newAssignment = new AssignmentSubmissionInterface();
+                newAssignment.initComponents(user);
                 newAssignment.setVisible(true);
             }
         });
