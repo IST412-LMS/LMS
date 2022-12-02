@@ -20,11 +20,13 @@ public class LoginController {
         int user = p1.verifyUser(li);
         switch (user) {
             case 1:
+                li.setVisible(false);
                 fm = new FacultyInterface();
                 fm.initComponents(p1);
                 fm.setVisible(true);
                 break;
             case 2:
+                li.setVisible(false);
                 si = new StudentInterface();
                 si.initComponents(p1);
                 si.setVisible(true);
