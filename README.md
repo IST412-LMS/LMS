@@ -20,6 +20,16 @@ The system allows for someone with a Student login to post an assignment. This w
 
 The system allows for anyone to view the list of assignment deatils. This works by printing the details of the assignment list. In order to test this use the either login (FACULTY, facIST123; STUDENT, studIST123). Then choose the 'Details' button. From here you can view the whole list with lots of details.
 
+## Implementations Phase Contributions Sheet
+https://docs.google.com/document/d/1ASXrsMisGaUJHUlEyLyWn9KO6qq_PHV9t07-GFLjzWQ/edit?usp=sharing
+Madison Borkovich: 25%
+Completed writing assignments
+Nicole Davey: 25%
+Completed writing assignments
+Hannah Kern: 50%
+Completed some of the writing assignments and most of the code
+
+
 ## Refactoring Plan
 
 Madison was in charge of our refactoring plan. She took care of the dispensables and a few bloaters that we found in our code. Below are a list of code changes that needed made that were taken care of.
