@@ -22,11 +22,17 @@ The system allows for anyone to view the list of assignment deatils. This works 
 
 ## Implementations Phase Contributions Sheet
 https://docs.google.com/document/d/1ASXrsMisGaUJHUlEyLyWn9KO6qq_PHV9t07-GFLjzWQ/edit?usp=sharing
+<br><br>
 Madison Borkovich: 25%
+<br>
 Completed writing assignments
+<br><br>
 Nicole Davey: 25%
+<br>
 Completed writing assignments
+<br><br>
 Hannah Kern: 50%
+<br>
 Completed some of the writing assignments and most of the code
 
 
