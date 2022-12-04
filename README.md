@@ -12,6 +12,10 @@ The system allows users to communicate via email. Although we don't actually hav
 
 The system allows for someone with a Faculty login to edit an assignment grade. This works by using a text field to take user input on the AssignmentViewingInterface and save it to the hashmap that holds the assignments. In order to test grading use the faculty login (FACULTY, facIST123). Then choose 'Assignment Grading'. From here you can select an assigment and choose 'View Selected Assignment'. Change the text field and press 'Grade Assignment'. You should see the page reload and the grade change to what your input was.
 
+## Use Case #3 - Assignment Submission
+
+The system allows for someone with a Student login to post an assignment. This works by using a text field to take user input on the AssignmentSubmissionInterface and save it to the arraylsit that holds the submissions. In order to test grading use the student login (STUDENT, studcIST123). Then choose 'Assignment Submission'. From here you can add your submission to the text box. If you change the text field and press 'Submit' it will save and you will see it in the past submissions page.
+
 ## Refactoring Plan
 
 Madison was in charge of our refactoring plan. She took care of the dispensables and a few bloaters that we found in our code. Below are a list of code changes that needed made that were taken care of.
