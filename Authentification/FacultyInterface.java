@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import learningmanagementsystem.Assignments.Assignment;
+import learningmanagementsystem.Assignments.AssignmentDetailsInterface;
 import learningmanagementsystem.Assignments.AssignmentInterface;
 import learningmanagementsystem.Assignments.AssignmentList;
 import learningmanagementsystem.Communication.InboxController;
@@ -44,6 +45,7 @@ public class FacultyInterface extends JFrame implements ActionListener {
 
         JButton communicationButton = new JButton("Communication");
         JButton assignmentGradingButton = new JButton("Assignment Grading");
+        JButton assignmentDetailsButton = new JButton("View Assignment Details");
         JButton backButton = new JButton("Return to login");
 
         communicationButton.addActionListener(new ActionListener() {
@@ -64,6 +66,15 @@ public class FacultyInterface extends JFrame implements ActionListener {
                 HashMap<Integer, Assignment> newHM = newAL.AssignmentList();
                 AssignmentInterface newAssignment = new AssignmentInterface();
                 newAssignment.initComponents(user, newHM);
+                newAssignment.setVisible(true);
+            }
+        });
+
+        assignmentDetailsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AssignmentDetailsInterface newAssignment = new AssignmentDetailsInterface();
+                newAssignment.initComponents(user);
                 newAssignment.setVisible(true);
             }
         });

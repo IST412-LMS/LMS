@@ -23,6 +23,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import learningmanagementsystem.Assignments.Assignment;
+import learningmanagementsystem.Assignments.AssignmentDetailsInterface;
 import learningmanagementsystem.Assignments.AssignmentInterface;
 import learningmanagementsystem.Communication.InboxInterface;
 
@@ -47,6 +48,7 @@ public class StudentInterface extends JFrame implements ActionListener {
 
         JButton communicationButton = new JButton("Communication");
         JButton assignmentSubmissionButton = new JButton("Assignment Submission");
+        JButton assignmentDetailsButton = new JButton("View Assignment Details");
         JButton backButton = new JButton("Return to login");
 
         communicationButton.addActionListener(new ActionListener() {
@@ -63,6 +65,14 @@ public class StudentInterface extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 AssignmentSubmissionInterface newAssignment = new AssignmentSubmissionInterface();
+                newAssignment.initComponents(user);
+                newAssignment.setVisible(true);
+            }
+        });
+        assignmentDetailsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AssignmentDetailsInterface newAssignment = new AssignmentDetailsInterface();
                 newAssignment.initComponents(user);
                 newAssignment.setVisible(true);
             }
@@ -89,6 +99,7 @@ public class StudentInterface extends JFrame implements ActionListener {
         // this.add(tabbedPane);
         buttonPanel.add(communicationButton);
         buttonPanel.add(assignmentSubmissionButton);
+        buttonPanel.add(assignmentDetailsButton);
         buttonPanel.add(backButton);
 
         getContentPane().add(instrumentPanel, BorderLayout.CENTER);
