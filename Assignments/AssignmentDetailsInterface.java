@@ -17,6 +17,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -27,6 +29,7 @@ public class AssignmentDetailsInterface extends JFrame implements ActionListener
     JPanel buttonPanel;
     JPanel instrumentPanel;
     final JTextField commentTextField = new JTextField(15);
+    JTable j;
 
     public void initComponents(Person user) {
         // navigation tabs
@@ -35,11 +38,29 @@ public class AssignmentDetailsInterface extends JFrame implements ActionListener
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        instrumentPanel = new JPanel(new GridLayout(5, 1));
+        instrumentPanel = new JPanel(new GridLayout(4, 1));
         instrumentPanel.add(new JLabel("Welcome to the Assignment Details"));
         instrumentPanel.add(new JLabel("Here is the list of Assingments: "));
 
         // TODO ADD HARDCODED ASSIGNMENTS
+        String[][] data = {
+                { "Assignment 1", "40", "November 7th", "Read a book" },
+                { "Assignment 2", "100", "November 14th", "Write a summary" },
+                { "Assignment 3", "100", "November 21st", "Write a report" },
+                { "Assignment 4", "100", "November 28th", "Create a presentation" },
+                { "Assignment 5", "100", "December 5th", "Present presentation" }
+        };
+
+        // Column Names
+        String[] columnNames = { "Assignment", "Points", "Due Date", "Description" };
+
+        // Initializing the JTable
+        j = new JTable(data, columnNames);
+        j.setBounds(30, 40, 200, 1000);
+
+        // adding it to JScrollPane
+        JScrollPane sp = new JScrollPane(j);
+        instrumentPanel.add(sp);
 
         buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
