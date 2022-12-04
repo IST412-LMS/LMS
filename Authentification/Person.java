@@ -18,9 +18,13 @@ public class Person {
 
     public int verifyUser(LoginInterface li) {
         if (loginID.equals("FACULTY") && password.equals("facIST123")) {
+            // li.dispose();
+            // li.setVisible(false);
             return 1;
         } else if (loginID.equals("STUDENT") && password.equals("studIST123")) {
             this.Name = loginID;
+            // li.dispose();
+            // li.setVisible(false);
             return 2;
         } else {
             li.brokenPassword();

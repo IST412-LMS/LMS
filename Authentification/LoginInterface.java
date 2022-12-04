@@ -52,7 +52,7 @@ public class LoginInterface extends JFrame implements ActionListener {
                 Person p = new Person(username, password);
 
                 lc.submitClicked(p);
-                // li.setVisible(false);
+                // System.exit(ABORT);
             }
         });
 
