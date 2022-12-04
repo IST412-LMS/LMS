@@ -10,11 +10,15 @@ The system allows users to communicate via email. Although we don't actually hav
 
 ## Use Case #2 - Assignment Grading
 
-The system allows for someone with a Faculty login to edit an assignment grade. This works by using a text field to take user input on the AssignmentViewingInterface and save it to the hashmap that holds the assignments. In order to test grading use the faculty login (FACULTY, facIST123). Then choose 'Assignment Grading'. From here you can select an assigment and choose 'View Selected Assignment'. Change the text field and press 'Grade Assignment'. You should see the page reload and the grade change to what your input was.
+The system allows for someone with a Faculty login to edit an assignment grade. This works by using a text field to take user input on the AssignmentViewingInterface and save it to the hashmap that holds the assignments. In order to test grading use the faculty login (FACULTY, facIST123). Then choose 'Assignment Grading'. From here you can select an assigment and choose 'View Selected Assignment'. Change the text field and press 'Grading'. You should see the page reload and the grade change to what your input was.
 
 ## Use Case #3 - Assignment Submission
 
-The system allows for someone with a Student login to post an assignment. This works by using a text field to take user input on the AssignmentSubmissionInterface and save it to the arraylsit that holds the submissions. In order to test grading use the student login (STUDENT, studcIST123). Then choose 'Assignment Submission'. From here you can add your submission to the text box. If you change the text field and press 'Submit' it will save and you will see it in the past submissions page.
+The system allows for someone with a Student login to post an assignment. This works by using a text field to take user input on the AssignmentSubmissionInterface and save it to the arraylsit that holds the submissions. In order to test submissions use the student login (STUDENT, studIST123). Then choose 'Submission'. From here you can add your submission to the text box. If you change the text field and press 'Submit' it will save and you will see it in the past submissions page.
+
+## Use Case #4 - Assignment Details
+
+The system allows for anyone to view the list of assignment deatils. This works by printing the details of the assignment list. In order to test this use the either login (FACULTY, facIST123; STUDENT, studIST123). Then choose the 'Details' button. From here you can view the whole list with lots of details.
 
 ## Refactoring Plan
 
