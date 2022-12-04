@@ -47,8 +47,8 @@ public class StudentInterface extends JFrame implements ActionListener {
         buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
         JButton communicationButton = new JButton("Communication");
-        JButton assignmentSubmissionButton = new JButton("Assignment Submission");
-        JButton assignmentDetailsButton = new JButton("View Assignment Details");
+        JButton assignmentSubmissionButton = new JButton("Submissions");
+        JButton assignmentDetailsButton = new JButton("Details");
         JButton backButton = new JButton("Return to login");
 
         communicationButton.addActionListener(new ActionListener() {

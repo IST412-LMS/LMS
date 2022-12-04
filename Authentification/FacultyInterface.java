@@ -44,8 +44,8 @@ public class FacultyInterface extends JFrame implements ActionListener {
         buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
         JButton communicationButton = new JButton("Communication");
-        JButton assignmentGradingButton = new JButton("Assignment Grading");
-        JButton assignmentDetailsButton = new JButton("View Assignment Details");
+        JButton assignmentGradingButton = new JButton("Grading");
+        JButton assignmentDetailsButton = new JButton("Details");
         JButton backButton = new JButton("Return to login");
 
         communicationButton.addActionListener(new ActionListener() {
@@ -100,6 +100,7 @@ public class FacultyInterface extends JFrame implements ActionListener {
         // this.add(tabbedPane);
         buttonPanel.add(communicationButton);
         buttonPanel.add(assignmentGradingButton);
+        buttonPanel.add(assignmentDetailsButton);
         buttonPanel.add(backButton);
 
         getContentPane().add(instrumentPanel, BorderLayout.CENTER);
