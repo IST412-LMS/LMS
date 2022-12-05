@@ -24,6 +24,7 @@ import learningmanagementsystem.Assignments.AssignmentList;
 import learningmanagementsystem.Communication.InboxController;
 import learningmanagementsystem.Communication.InboxInterface;
 
+
 public class FacultyInterface extends JFrame implements ActionListener {
     JPanel buttonPanel;
     JPanel instrumentPanel;
@@ -46,6 +47,7 @@ public class FacultyInterface extends JFrame implements ActionListener {
         JButton communicationButton = new JButton("Communication");
         JButton assignmentGradingButton = new JButton("Grading");
         JButton assignmentDetailsButton = new JButton("Details");
+        JButton rosterButton = new JButton("Roster");
         JButton backButton = new JButton("Return to login");
 
         communicationButton.addActionListener(new ActionListener() {
@@ -79,6 +81,15 @@ public class FacultyInterface extends JFrame implements ActionListener {
             }
         });
 
+        rosterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RosterInterface ri = new RosterInterface();
+                ri.initComponents();
+                ri.setVisible(true);
+            }
+        });
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -101,6 +112,7 @@ public class FacultyInterface extends JFrame implements ActionListener {
         buttonPanel.add(communicationButton);
         buttonPanel.add(assignmentGradingButton);
         buttonPanel.add(assignmentDetailsButton);
+        buttonPanel.add(rosterButton);
         buttonPanel.add(backButton);
 
         getContentPane().add(instrumentPanel, BorderLayout.CENTER);
