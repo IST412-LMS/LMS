@@ -16,7 +16,11 @@ The system allows for someone with a Faculty login to edit an assignment grade. 
 
 The system allows for someone with a Student login to post an assignment. This works by using a text field to take user input on the AssignmentSubmissionInterface and save it to the arraylsit that holds the submissions. In order to test submissions use the student login (STUDENT, studIST123). Then choose 'Submission'. From here you can add your submission to the text box. If you change the text field and press 'Submit' it will save and you will see it in the past submissions page.
 
-## Use Case #4 - Assignment Details
+## Use Case #4 - Roster Interface
+
+The system allows for the professor to view the list of students in his class. This works by printing the details of the class list. In order to test this use the FACULTY login (FACULTY, facIST123). Then choose the 'Roster' button. From here you can view the whole list.
+
+## Use Case #5 - Assignment Details
 
 The system allows for anyone to view the list of assignment deatils. This works by printing the details of the assignment list. In order to test this use the either login (FACULTY, facIST123; STUDENT, studIST123). Then choose the 'Details' button. From here you can view the whole list with lots of details.
 
@@ -29,7 +33,7 @@ Completed writing assignments
 <br><br>
 Nicole Davey: 25%
 <br>
-Completed writing assignments
+Completed writing assignments and fourth use case
 <br><br>
 Hannah Kern: 50%
 <br>
