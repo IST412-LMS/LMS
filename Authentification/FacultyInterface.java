@@ -145,7 +145,7 @@ public class FacultyInterface extends JFrame implements ActionListener {
     // default:
     // break;
     // }
-    / }
+    // }
 
     @Override
     public void actionPerformed(ActionEvent e) {
