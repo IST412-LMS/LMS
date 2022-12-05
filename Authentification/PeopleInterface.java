@@ -33,6 +33,7 @@ public class PeopleInterface extends JFrame implements ActionListener {
 
         instrumentPanel = new JPanel(new GridLayout(5, 1));
         instrumentPanel.add(new JLabel("Welcome to People List"));
+        instrumentPanel.add(new JLabel("Here are the students in your class: "));
 
         if (newPersonHM == null) {
             System.out.println("null list");
