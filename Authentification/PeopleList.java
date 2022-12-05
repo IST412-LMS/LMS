@@ -12,6 +12,7 @@ public class PeopleList {
         Person person3 = new Person("Student", "Taylor Swift");
         Person person4 = new Person("Student", "Selena Gomez");
         Person person5 = new Person("Student", "Miley Cyrus");
+        Person person6 = new Person("Student", "Harry Styles");
 
         // add to peopleList
         peopleList.put(1, person1);
@@ -19,6 +20,7 @@ public class PeopleList {
         peopleList.put(3, person3);
         peopleList.put(4, person4);
         peopleList.put(5, person5);
+        peopleList.put(6, person6);
 
         return peopleList;
     }
