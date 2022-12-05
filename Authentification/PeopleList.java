@@ -7,7 +7,7 @@ public class PeopleList {
 
     public HashMap<String, Person> PeopleList() {
         // hard coded values for now
-        Person person1 = new Person("Learning Assistant", "Ryan Lewis");
+        Person person1 = new Person("Learning Assistant", "Lewis Capaldi");
         Person person2 = new Person("Teaching Assistant", "Justin Bieber");
         Person person3 = new Person("Student", "Taylor Swift");
         Person person4 = new Person("Student", "Selena Gomez");
