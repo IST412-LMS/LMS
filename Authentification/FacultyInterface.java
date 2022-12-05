@@ -83,10 +83,12 @@ public class FacultyInterface extends JFrame implements ActionListener {
 
         rosterButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                RosterInterface ri = new RosterInterface();
-                ri.initComponents();
-                ri.setVisible(true);
+             public void actionPerformed(ActionEvent e) {
+             PeopleList newPL = new PeopleList();
+                HashMap<Integer, Person> newHM = newPL.PeopleList();
+                PeopleInterface newPerson = new PeopleInterface();
+                newPerson.initComponents(user, newHM);
+                newPerson.setVisible(true);
             }
         });
 
