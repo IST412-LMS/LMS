@@ -30,7 +30,7 @@ public class TestHarness {
         // FACULTY, facIST123, 2, 1
         // "You have made it to the sendEmail page"
 
-        // 3. faculty quit
+        // 3. faculty quitFACULTY
         // FACULTY, facIST123, 3
         // program will quit
 

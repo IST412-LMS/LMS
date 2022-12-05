@@ -22,10 +22,18 @@ public class PeopleInterface extends JFrame implements ActionListener {
     JPanel buttonPanel;
     JPanel instrumentPanel;
     PeopleList people = new PeopleList();
-    ArrayList<String> assignPL = new ArrayList<String>();
-    HashMap<String, Person> assignHM = new HashMap<>();
+    ArrayList<String> personAL = new ArrayList<String>();
+    HashMap<Integer, String> personHM = new HashMap<>();
 
-    public void initComponents(Person user, HashMap<String, Person> newPersonHM) {
+    public void initComponents(Person user, HashMap<Integer, String> newPersonHM) {
+        setTitle("People Interface");
+        setSize(600, 350);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        instrumentPanel = new JPanel(new GridLayout(5, 1));
+        instrumentPanel.add(new JLabel("Welcome to People List"));
+
         if (newPersonHM == null) {
             System.out.println("null list");
             personHM = people.PeopleList();
@@ -33,17 +41,20 @@ public class PeopleInterface extends JFrame implements ActionListener {
             personHM = newPersonHM;
         }
 
-      
+        System.out.println("people interface: " + newPersonHM.get(1));
 
+        for (int i = 1; i < 6; i++) {
+            String newPerson = newPersonHM.get(i);
+            personAL.add(newPerson);
+            System.out.println(newPerson);
+        }
 
-        Object[] person.toArray();
+        Object[] assignStrings = personAL.toArray();
+        JComboBox assignDropdown = new JComboBox(assignStrings);
 
         buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
-
         JButton backButton = new JButton("Return to Home");
-
-      
 
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -70,9 +81,8 @@ public class PeopleInterface extends JFrame implements ActionListener {
             }
         });
 
-
-       
         buttonPanel.add(backButton);
+        instrumentPanel.add(assignDropdown);
 
         getContentPane().add(instrumentPanel, BorderLayout.CENTER);
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
@@ -84,6 +94,6 @@ public class PeopleInterface extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JComboBox cb = (JComboBox) e.getSource();
         String item = (String) cb.getSelectedItem();
-       
+
     }
 }

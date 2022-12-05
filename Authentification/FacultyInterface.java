@@ -24,7 +24,6 @@ import learningmanagementsystem.Assignments.AssignmentList;
 import learningmanagementsystem.Communication.InboxController;
 import learningmanagementsystem.Communication.InboxInterface;
 
-
 public class FacultyInterface extends JFrame implements ActionListener {
     JPanel buttonPanel;
     JPanel instrumentPanel;
@@ -47,7 +46,7 @@ public class FacultyInterface extends JFrame implements ActionListener {
         JButton communicationButton = new JButton("Communication");
         JButton assignmentGradingButton = new JButton("Grading");
         JButton assignmentDetailsButton = new JButton("Details");
-        JButton peopleButton = new JButton("Roster");
+        JButton rosterButton = new JButton("Roster");
         JButton backButton = new JButton("Return to login");
 
         communicationButton.addActionListener(new ActionListener() {
@@ -81,11 +80,11 @@ public class FacultyInterface extends JFrame implements ActionListener {
             }
         });
 
-        peopleButton.addActionListener(new ActionListener() {
+        rosterButton.addActionListener(new ActionListener() {
             @Override
-             public void actionPerformed(ActionEvent e) {
-             PeopleList newPL = new PeopleList();
-                HashMap<String, Person> newHM = newPL.PeopleList();
+            public void actionPerformed(ActionEvent e) {
+                PeopleList newPL = new PeopleList();
+                HashMap<Integer, String> newHM = newPL.PeopleList();
                 PeopleInterface newPerson = new PeopleInterface();
                 newPerson.initComponents(user, newHM);
                 newPerson.setVisible(true);
